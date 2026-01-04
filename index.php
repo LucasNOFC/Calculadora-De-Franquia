@@ -72,8 +72,8 @@ if (isset($_SESSION['result'])) {
 
         <?php if (isset($franchiseValue)): ?>
             <div class="franchise-container" data-container="exists">
-                <p>O valor do sinistro é: R$<?= $franchiseValue ?></p>
-                <button id="copyButton" data-text="<?= $script ?>">Copiar Texto</button>
+                <p>O script está pronto para ser copiado.</p>
+                <button id="copyButton" data-text="<?= $script ?>">Copiar Script</button>
             </div>
         <?php endif; ?>
 
