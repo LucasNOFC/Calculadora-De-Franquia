@@ -57,7 +57,7 @@ if (isset($_SESSION['result'])) {
                     </div>
                     <div class="form-fields form-input-fields">
                         <label for="percentageF">% do calculo</label>
-                        <input id="percentageF" name="percentageF" class="inputValues" type="text" inputmode="numeric" autocomplete="off" required>
+                        <input id="percentageF" pattern="^[\%0-9,\.]+" oninput="this.value = this.value.replace(/[^%\0-9,\.]/g, '')" name="percentageF" class="inputValues" type="text" inputmode="numeric" autocomplete="off" required>
                     </div>
                     <div class="form-fields">
                         <label for="percentageF">Moto</label>
@@ -71,7 +71,7 @@ if (isset($_SESSION['result'])) {
         </form>
 
         <?php if (isset($franchiseValue)): ?>
-            <div class="franchise-container">
+            <div class="franchise-container" data-container="exists">
                 <p>O valor do sinistro é: R$<?= $franchiseValue ?></p>
                 <button id="copyButton" data-text="<?= $script ?>">Copiar Texto</button>
             </div>
