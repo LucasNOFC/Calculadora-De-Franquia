@@ -35,17 +35,13 @@ if (isset($_SESSION['result'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Franquia</title>
-    <link rel="stylesheet" href="index.css">
-</head>
+$title = "Calculadora de Franquia";
+include __DIR__ . '/components/header.php';
 
-<body>
+?>
+
     <main class="calculator-container">
         <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" class="calculator" id="form">
             <div class="form-header">Calculadora de Franquia</div>
@@ -79,7 +75,5 @@ if (isset($_SESSION['result'])) {
 
     </main>
 
-    <script src="functions.js"></script>
-</body>
 
-</html>
+<?php include __DIR__ . '/components/footer.php'; ?>

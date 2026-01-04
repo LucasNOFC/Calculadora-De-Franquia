@@ -107,10 +107,6 @@ function scriptOutput($isCarVehicle, $franchise, $percentage, $fipe)
     }
 }
 
-function test() {
-    return null;
-}
-
 $formatedFipe = trimAndFormatFipeValue($fipe);
 $formatedPercentage = trimAndFormatPercentage($percentage);
 $franchiseValue = fipeCalculator($formatedFipe, $formatedPercentage, false);
