@@ -37,7 +37,17 @@ function fipeCalculator($fipe, $percentage, $isCarVehicle)
         }
     }
 
+
+
     return $franchiseValue;
+}
+
+function finalValueFormated($franchise)
+{
+    $number = preg_replace('/[^\d.]/', '', $franchise);
+    $number = floatval($number);
+    $formatted = number_format($number, 2, ",", ".");
+    return $formatted;
 }
 
 function trimAndFormatFipeValue($fipe)
@@ -57,21 +67,23 @@ function trimAndFormatPercentage($percentage)
     return (int) $percentage;
 }
 
-function parseType($isCarVehicle) {
+function parseType($isCarVehicle)
+{
     if ($isCarVehicle === "True") return true;
     else return false;
 }
 
 function scriptOutput($isCarVehicle, $franchise, $percentage, $fipe)
 {
+
     if (!$isCarVehicle) {
         $script = <<< TEXTO
 
         A participação individual, também conhecida como “Franquia”, é uma parte do custo que o associado contratante deve pagar. Conforme previsto em contrato, essa cobrança ocorre, somente em casos de acionamentos. Em casos pequenas ou grandes colisões, perca total, roubo e furto.
 
-        A P.I é calculada com base em uma COTA que estar em nosso regulamento, verificamos o valor FIPE do veículo no mês vigente ao do sinistro. O valor FIPE do seu veículo no mês do sinistro é de R$ $fipe sendo assim a P.I para este acionamento será de R$ $franchise e esse é o valor que será pago para cobrir os reparos do veículo.
+        A P.I é calculada com base em uma COTA que estar em nosso regulamento, verificamos o valor FIPE do veículo no mês vigente ao do sinistro. O valor FIPE do seu veículo no mês do sinistro é de R$ $fipe sendo assim a P.I para este acionamento será de R$ $franchise e esse é o valor que será pago para cobrir os custos relacionados a este acionamento.
 
-        Porém, este pagamento não é efetuado agora, primeiramente solicitamos algumas documentações, após o envio completo destas documentações serão encaminhadas para análise do processo que tem um prazo de até 72hs úteis para conclusão, concluída e aprovada seguiremos para o pagamento, confirmado o pagamento será iniciado o processo de reparo.
+        Porém, este pagamento não é efetuado agora, primeiramente solicitamos algumas documentações, após o envio completo destas documentações serão encaminhadas para análise do processo que tem um prazo de até 72hs úteis para conclusão, concluída e aprovada seguiremos para o pagamento, confirmado o pagamento será iniciado a fase final deste acionamento.
 
         ➡️ Podemos seguir para documentação necessária ou há alguma dúvida?
 
@@ -83,15 +95,15 @@ function scriptOutput($isCarVehicle, $franchise, $percentage, $fipe)
 
         A participação individual, também conhecida como “Franquia”, é uma parte do custo que o associado contratante deve pagar. Conforme previsto em contrato, essa cobrança ocorre, somente em casos de acionamentos. Em casos pequenas ou grandes colisões, perca total, roubo e furto.
 
-        A PI é calculada com base em $percentage% do valor FIPE do veículo no mês vigente ao do sinistro. O valor FIPE do seu veículo no mês do sinistro é de $fipe, sendo assim a PI para este acionamento será de R$ $franchise e esse é o valor que será pago para cobrir os reparos do veículo.
+        A PI é calculada com base em $percentage% do valor FIPE do veículo no mês vigente ao do sinistro. O valor FIPE do seu veículo no mês do sinistro é de $fipe, sendo assim a PI para este acionamento será de R$ $franchise e esse é o valor que será pago para cobrir os custos relacionados a este acionamento.
 
-        Porém, este pagamento não é efetuado agora, primeiramente solicitamos algumas documentações, após o envio completo destas documentações serão encaminhadas para análise do processo que tem um prazo de até 72hs úteis para conclusão, concluída e aprovada seguiremos para o pagamento, confirmado o pagamento será iniciado o processo de reparo.
+        Porém, este pagamento não é efetuado agora, primeiramente solicitamos algumas documentações, após o envio completo destas documentações serão encaminhadas para análise do processo que tem um prazo de até 72hs úteis para conclusão, concluída e aprovada seguiremos para o pagamento, confirmado o pagamento será iniciado a fase final deste acionamento.
 
         ➡️ Podemos seguir para documentação necessária ou há alguma dúvida?
        
         TEXTO;
 
-        return $script; 
+        return $script;
     }
 }
 
@@ -101,3 +113,5 @@ $formatedFipe = trimAndFormatFipeValue($fipe);
 $formatedPercentage = trimAndFormatPercentage($percentage);
 $franchiseValue = fipeCalculator($formatedFipe, $formatedPercentage, false);
 $script = scriptOutput($isCarVehicle, $franchiseValue, $formatedPercentage, $fipe);
+
+
