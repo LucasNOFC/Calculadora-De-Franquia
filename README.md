@@ -6,7 +6,7 @@ A Calculadora de Franquia é um sistema desenvolvido em PHP,HTML5,CSS3 e JavaScr
 
 A solução acelera o tempo de entrega de informativo de franquia para associados que desejam apenas saber o valor da franquia, ou, durante o processo de acionamento, facilita a entrega da informação.
 
-O usuário (o prestador) utiliza o valor da tabela fipe constando o mês da data do sinistro, junto com a porcentagem em cima, conforme o contrato do associado.
+O usuário (o colaborador) utiliza o valor da tabela fipe constando o mês da data do sinistro, junto com a porcentagem em cima, conforme o contrato do associado.
 
 Após preenchimento das informações, é retornado para o associado a mensagem pronta, formatada constando: O Valor da Franquia, Valor da Porcentagem e Valor da FIPE.
 
@@ -36,3 +36,4 @@ Para rodar a aplicação localmente:
  
 ## Qual a arquitetura da aplicação?
   A aplicação segue uma arquitetura MVC simplificada, suficiente para fins didáticos e demonstrativos.
+
