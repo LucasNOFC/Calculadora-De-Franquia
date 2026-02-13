@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Franquia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <form class="w-screen h-screen bg-gray-900" id="franchise-form">
+        <div class="max-w-[300px] flex flex-col m-auto p-5 rounded-md">
+            <div class="bg-white p-5 w-full text-center rounded-t-md">
+                <h1 class="text-2xl font-bold">FRANQUIA</h1>
+            </div>
+            <div class="bg-gray-200 p-2">
+                <div class="flex flex-col w-full justify-center p-2 ">
+                    <h2 class="text-gray-600 text-[12px] font-bold">Calculo da <span class="text-blue-700">Participação
+                            individual</span>
+                    </h2>
+                            <p class="text-gray-500 text-[9px]">Preencha os dados abaixo para calcular a PI.</p>
+                </div>
+                <div class="flex flex-col w-full items-center">
+                    <div class="w-[90%] h-30 bg-white p-2 m-2 border border-gray-200 rounded-md">
+                        <label for="fipeValue" class="text-[10px] text-gray-500 ">VALOR DA FIPE</label>
+                        <div class="flex items-center mt-1">
+                            <p class="text-sm text-gray-700 mr-1">R$</p>
+
+                            <input type="text" class="appearance-none 
+                                     [&::-webkit-inner-spin-button]:appearance-none 
+                                     [&::-webkit-outer-spin-button]:appearance-none 
+                                     [-moz-appearance:textfield]
+                                     outline-none ring-0 focus:outline-none focus:ring-0
+                                     ml-1" name="fipeValue" id="fipeValue" required placeholder=" 0,00">
+                        </div>
+                    </div>
+                    <div class="w-[90%] h-30 bg-white p-2 m-2 border border-gray-200 rounded-md">
+                        <label for="fipePercentage" class="text-[10px] text-gray-500 ">% DA FIPE</label>
+                        <input type="number" class="appearance-none 
+         [&::-webkit-inner-spin-button]:appearance-none 
+         [&::-webkit-outer-spin-button]:appearance-none 
+         [-moz-appearance:textfield]
+         outline-none ring-0 focus:outline-none focus:ring-0
+         ml-2" name="fipePercentage" id="fipePercentage" required placeholder=" 100 ">
+                    </div>
+                </div>
+                <div class="p-2">
+                    <p class="text-gray-500 text-[9px]">Tipo de veículo</p>
+                    <div class="grid grid-cols-2 grid-rows-2 justify-between items-center p-2 gap-1">
+                        <div class="col-start-1 col-span-1 row-start-1 w-full">
+                            <input type="radio" class="peer sr-only" name="isCar" id="isCar" value="car" required>
+                            <label for="isCar"
+                                class="w-full p-2 cursor-pointer peer-checked:border-blue-700 peer-checked:bg-gray-600/10 transition-all border-gray-400 border flex flex-col items-center rounded-md">
+                                <img src="images/car_simbol.png" alt="car_simbol" class="w-5">
+                                <p class="text-[12px]">Carro</p>
+                            </label>
+                        </div>
+                        <div class="col-start-2 col-span-2 row-start-1 w-full">
+                            <input type="radio" class="peer sr-only" name="isCar" id="isBike" value="bike" required>
+                            <label for="isBike"
+                                class="w-full p-2 cursor-pointer peer-checked:border-blue-700 peer-checked:bg-gray-600/10 transition-all border-gray-400 border flex flex-col items-center rounded-md">
+                                <img src="images/bike_simbol.png" alt="bike_simbol" class="w-5">
+                                <p class="text-[12px]">Moto</p>
+                            </label>
+                        </div>
+                        <div class="col-start-1 col-span-3 row-start-2 w-full">
+                            <input type="radio" class="peer sr-only" name="isCar" id="isTruck" value="truck" required>
+                            <label for="isTruck"
+                                class="w-full p-2 cursor-pointer peer-checked:border-blue-700 peer-checked:bg-gray-600/10 transition-all border-gray-400 border flex flex-col items-center rounded-md">
+                                <img src="images/truck_simbol.png" alt="truck_simbol" class="w-5">
+                                <p class="text-[12px]">Caminhonete</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <p class="text-gray-500 text-[9px]">Acionamento em menos de um ano?</p>
+                    <div class="flex justify-between items-center p-1 bg-white rounded-md mt-2">
+                        <div>
+                            <input type="radio" value="true" name="isFirstFranchise" id="isFirst" required class="peer sr-only">
+                            <label for="isFirst" class="w-[100px] p-2 cursor-pointer peer-checked:text-blue-700 peer-checked:border-blue-700 peer-checked:bg-gray-600/10 transition-all flex flex-col items-center rounded-md">
+                                <p class="text-[10px] ">Sim</p>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" value="false" name="isFirstFranchise" id="isNotFirst" required class="peer sr-only">
+                            <label for="isNotFirst" class="w-[100px] p-2 cursor-pointer peer-checked:text-blue-700 peer-checked:border-blue-700 peer-checked:bg-gray-600/10 transition-all flex flex-col items-center rounded-md">
+                                <p class="text-[10px] ">Não</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center p-2 bg-white rounded-b-md">
+                <button type="submit" class="p-2 bg-blue-600 cursor-pointer hover:bg-blue-500 transition-all text-white w-full rounded-md">Resultado</button>
+            </div>
+        </div>
+        </div>
+    </form>
+
+    <script src="functions.js"></script>
+    <script src="index.js"></script>
+    <script src="tailwind.config.js"></script>
+</body>
+
+</html>
