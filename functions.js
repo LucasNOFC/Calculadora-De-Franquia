@@ -92,8 +92,8 @@ Porém, este pagamento não é efetuado agora, primeiramente solicitamos algumas
 };
 
 const copyScript = (message) => {
-    navigator.clipboard.writeText(message);
-}
+  navigator.clipboard.writeText(message);
+};
 
 const generateModal = (value, scriptMessage) => {
   if (document.getElementById("franchiseModal")) return;
@@ -125,7 +125,7 @@ const generateModal = (value, scriptMessage) => {
                     Copiar script
                 </button>
 
-                <a id="newSimulationButton" href="/" class="w-52 p-3 bg-gray-300 text-gray-600 font-bold hover:bg-gray-400 text-center rounded-xl transition-all">
+                <a id="newSimulationButton" href="https://lucasnofc.github.io/Calculadora-De-Franquia/" class="w-52 p-3 bg-gray-300 text-gray-600 font-bold hover:bg-gray-400 text-center rounded-xl transition-all">
                     Novo calculo
                 </a>
             </div>
@@ -147,7 +147,7 @@ const modalEventHandler = (modal, scriptMessage) => {
 
   copyScriptButton.addEventListener("click", () => {
     copyScript(scriptMessage);
-  })
+  });
 
   closeButton.addEventListener("click", () => {
     closeModal(modal);
