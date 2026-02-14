@@ -1,6 +1,6 @@
 ﻿# Calculadora de franquia 
  
-A Calculadora de Franquia é um sistema desenvolvido em PHP,HTML5,CSS3 e JavaScript, destinado a calcular e exibir valores de franquia de maneira ágil.
+A Calculadora de Franquia é um sistema desenvolvido em HTML5 JavaScript e Tailwind, destinado a calcular e exibir valores de franquia de maneira ágil.
 
 ## O que a solução faz ?
 
